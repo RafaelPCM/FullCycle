@@ -1,0 +1,74 @@
+POST http://localhost:8080/category HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{ 
+    "name": "Category 2",
+    "description": "Category 2 description"
+}
+
+# {
+#   "ID": "f3cd905c-a61e-4fb1-a855-44755d9325e2",
+#   "Name": "Category 1"
+# }
+
+###
+
+GET http://localhost:8080/category/f3cd905c-a61e-4fb1-a855-44755d9325e2 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+
+###
+
+GET http://localhost:8080/category HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+###
+
+POST http://localhost:8080/product HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{ 
+    "name": "Product 1",
+    "description": "Product 1 description",
+    "price":  100,
+    "image_url": "http://www.google.com",
+    "category_id":  "f3cd905c-a61e-4fb1-a855-44755d9325e2"
+}
+
+# {
+#   "id": "e14195ab-ac8c-47c0-bc7e-6ef4fdf65ff7",
+#   "name": "Product 1",
+#   "description": "Product 1 description",
+#   "price": 100,
+#   "category_id": "f3cd905c-a61e-4fb1-a855-44755d9325e2",
+#   "image_url": "http://www.google.com"
+# }
+
+###
+
+GET http://localhost:8080/product HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+
+###
+
+GET http://localhost:8080/product/category/f3cd905c-a61e-4fb1-a855-44755d9325e2 HTTP/1.1
+Host:  localhost:8080
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/product/0177d14f-3513-46c9-b6d9-888e77a35bf7 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+
+
+
+
+
