@@ -1,4 +1,4 @@
-package catalog
+package main
 
 import (
 	"database/sql"
@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	db, err := sql.Open("mysql", "root:root@tcp(localhost:3306/FullCycle)")
+	db, err := sql.Open("mysql", "root:root@tcp(localhost:3306)/goapi")
 	if err != nil {
 		panic(err.Error())
 	}
@@ -37,8 +37,8 @@ func main() {
 	c.Post("/category", webCategoryHandler.CreateCategory)
 
 
-	c.Get("/categproduct/{id}", webProductHandler.GetProduct)
 	c.Get("/product", webProductHandler.GetProducts)
+	c.Get("/product/{id}", webProductHandler.GetProduct)
 	c.Get("/product/category/{categoryID}", webProductHandler.GetProductByCategoryID)
 	c.Post("/product", webProductHandler.CreateProduct)
 
